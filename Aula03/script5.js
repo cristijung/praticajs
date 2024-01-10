@@ -11,24 +11,30 @@
 // - Finalmente, crie um array com os números primos encontrados e retorne-o como resultado da função.
 // - Você deve implementar o algoritmo do Crivo de Eratóstenes usando laços de repetição. Não é permitido utilizar métodos prontos de busca de números primos ou quaisquer outras bibliotecas externas.
 
-function isPrime(num) {
-    let count = 0;
+const arr = [1, 2, 3, 4, 5, 6, 7, 8];
+let naoPrimos = [];
+let primos = [];
 
-    for (let i = 1; i <= num && count <= 2; i++) {
-        if (num % i === 0) {
-            count++;
-        }
+function isPrime(n) {
+    if (n <= 1) return false;
+
+    for (let i = 2; i <= Math.sqrt(n); i++) {
+        if (n % i === 0) return false;
     }
-    return count ===2;
+    return true;
 }
-console.log(isPrime(100));
 
-(function crivo(num){
+function crivo(arr) {
+    for (e of arr) {
+        if (isPrime(e)) {
+            primos.push(e);
+            continue;
+        }
 
-    let array = new Array(num).fill(false);
+        naoPrimos.push(e);
+    }
+}
 
-    for(let index in array){
-        const isPrime = isPrime(index);
-        
-    console.log(array);
-})(100);
+crivo(arr);
+console.log(naoPrimos);
+console.log(primos);
