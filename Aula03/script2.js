@@ -3,3 +3,12 @@
 //um texto em número. Contudo, o que acontece se no lugar da idade for digitado um nome? O valor da idade 
 //será NaN (not a number). Isso faz todo sentido, pois a função parseInt não é capaz de converter um texto 
 //como "Calopsita" para um número.
+
+const palavra = 'Calopsita'
+let count = 0
+
+for (const letra of palavra) {
+    count++
+}
+
+console.log(`O total de letras da palavra é: ${count}`)
