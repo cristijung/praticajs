@@ -29,6 +29,6 @@ for (let index = 0; index < elementos.length - 1; index += 1) {
     elementos[index].quantidadeCarbono ===
     elementos[index + 1].quantidadeCarbono + 2
   ) {
-    console.log('Quantidade de carbono iguais');
+    console.log(`O elemento ${elementos[index].nome} e ${elementos[index + 1].nome} tem quantidade iguais de carbono`);
   }
 }
